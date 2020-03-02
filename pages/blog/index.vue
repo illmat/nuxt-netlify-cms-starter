@@ -3,6 +3,9 @@
     <ul v-for="(blogPost, index) in blogPosts" :key="index">
       <nuxt-link :to="`blog/${blogPost.slug}`">{{blogPost.title}}</nuxt-link>
       <p>{{blogPost.description}}</p>
+      <br />
+      <br />
+      <br />
     </ul>
   </div>
 </template>
