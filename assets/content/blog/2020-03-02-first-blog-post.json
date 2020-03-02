@@ -1,0 +1,6 @@
+{
+  "date": "2020-03-02T19:31:46.974Z",
+  "title": "first blog post",
+  "description": "jo das ist mein erster blog post",
+  "body": "# Hallo\n\nwillkommen auf der seite\n\n![altimage](/img/img_20190511_103600616_hdr.jpg \"müll sammmel\")\n\n```javascript\nconst foo = '123';\nconsole.log(foo);\n```"
+}
