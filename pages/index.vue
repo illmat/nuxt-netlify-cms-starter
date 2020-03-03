@@ -6,13 +6,18 @@
     <a href="https://github.com/xdesro/nuxt-netlify-cms-starter">GitHub</a>
     <a href="http://i.ncredibly.online">Twitter</a>
     <nuxt-link to="/blog">Blog</nuxt-link>
-    <div class="deploy-button">
+    <v-btn color="primary" icon>
+      <v-icon>mdi-one-up</v-icon>
+    </v-btn>
+    <v-btn color="primary" text outlined @click="expand = !expand">Mehr</v-btn>
+
+    <!-- <div class="deploy-button">
       <a
         href="https://app.netlify.com/start/deploy?repository=https://github.com/xdesro/nuxt-netlify-cms-starter"
       >
         <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
       </a>
-    </div>
+    </div>-->
   </div>
 </template>
 
