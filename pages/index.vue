@@ -186,7 +186,7 @@
             <v-divider></v-divider>
           </v-responsive>
 
-          <form netlify>
+          <form netlify name="contact" method="POST">
             <v-theme-provider light>
               <v-row>
                 <v-col cols="12">
