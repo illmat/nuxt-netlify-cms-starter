@@ -186,29 +186,31 @@
             <v-divider></v-divider>
           </v-responsive>
 
-          <v-theme-provider light>
-            <v-row>
-              <v-col cols="12">
-                <v-text-field flat label="Name*" solo></v-text-field>
-              </v-col>
+          <form netlify>
+            <v-theme-provider light>
+              <v-row>
+                <v-col cols="12">
+                  <v-text-field name="name" flat label="Name*" solo></v-text-field>
+                </v-col>
 
-              <v-col cols="12">
-                <v-text-field flat label="Email*" solo></v-text-field>
-              </v-col>
+                <v-col cols="12">
+                  <v-text-field flat name="email" label="Email*" solo></v-text-field>
+                </v-col>
 
-              <v-col cols="12">
-                <v-text-field flat label="Subject*" solo></v-text-field>
-              </v-col>
+                <v-col cols="12">
+                  <v-text-field flat name="subject" label="Betreff*" solo></v-text-field>
+                </v-col>
 
-              <v-col cols="12">
-                <v-textarea flat label="Message*" solo></v-textarea>
-              </v-col>
+                <v-col cols="12">
+                  <v-textarea flat name="message" label="Nachricht*" solo></v-textarea>
+                </v-col>
 
-              <v-col class="mx-auto" cols="auto">
-                <v-btn color="accent" x-large>Senden</v-btn>
-              </v-col>
-            </v-row>
-          </v-theme-provider>
+                <v-col class="mx-auto" cols="auto">
+                  <v-btn type="submit" color="accent" x-large>Senden</v-btn>
+                </v-col>
+              </v-row>
+            </v-theme-provider>
+          </form>
         </v-container>
 
         <div class="py-12"></div>
