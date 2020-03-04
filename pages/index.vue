@@ -1,22 +1,31 @@
 <template>
-  <v-app>
-    <v-app-bar app color="white" height="100">
-      <v-avatar class="mr-3" color="grey lighten-5" size="70">
+  <span>
+    <v-app-bar app height="60" elevate-on-scroll>
+      <!-- <v-avatar class="mr-3" color="grey lighten-5" size="70">
         <v-img
           contain
           max-height="70%"
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
         ></v-img>
-      </v-avatar>
+      </v-avatar>-->
 
-      <v-toolbar-title class="font-weight-black headline">VUETIFY</v-toolbar-title>
+      <v-toolbar-title class="font-weight-black headline"></v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn @click="$vuetify.goTo('#hero')" text>Start</v-btn>
+      <v-btn @click="$vuetify.goTo('#about-me')" text>Profil</v-btn>
+      <v-btn @click="$vuetify.goTo('#features')" text>Features</v-btn>
+      <v-btn @click="$vuetify.goTo('#stats')" text>Stats</v-btn>
+      <v-btn @click="$vuetify.goTo('#blog')" text>Blog</v-btn>
+      <v-btn @click="$vuetify.goTo('#contact')" text>Kontakt</v-btn>
+      <v-spacer></v-spacer>
     </v-app-bar>
     <v-content>
       <section id="hero">
         <v-row no-gutters>
           <v-img
+            max-height="1000"
             :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-            src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+            :src="require('~/assets/images/header_50.jpg')"
           >
             <v-theme-provider dark>
               <v-container fill-height>
@@ -25,14 +34,14 @@
                     <span
                       class="font-weight-light"
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
-                    >WELCOME TO</span>
+                    >Diplom Restauratorin Ante Theobalt</span>
 
                     <br />
 
                     <span
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
                       class="font-weight-black"
-                    >VUETIFY</span>
+                    >Steinkonservierung</span>
                   </v-col>
 
                   <v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
@@ -49,7 +58,7 @@
         <div class="py-12"></div>
 
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">ABOUT ME</h2>
+          <h2 class="display-2 font-weight-bold mb-3">Profil</h2>
 
           <v-responsive class="mx-auto mb-8" width="56">
             <v-divider class="mb-1"></v-divider>
@@ -57,20 +66,26 @@
             <v-divider></v-divider>
           </v-responsive>
 
-          <v-responsive
-            class="mx-auto title font-weight-light mb-8"
-            max-width="720"
-          >Vuetify is the #1 component library for Vue.js and has been in active development since 2016. The goal of the project is to provide users with everything that is needed to build rich and engaging web applications using the Material Design specification. It accomplishes that with a consistent update cycle, Long-term Support (LTS) for previous versions, responsive community engagement, a vast ecosystem of resources and a dedication to quality components.</v-responsive>
+          <v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
+            In meine Fachrichtung fällt die Bearbeitung von:
+            Naturstein, Ziegel/ Keramik, Betonwerkstein/ Terrazzo, Mosaik, Gips…
+            Seit 2013 bin ich freiberuflich selbstständig tätig im Bereich der Steinkonservierung. Ich arbeite auch als freie Mitarbeiterin in verschiedenen Restaurierungsfirmen.
+            Diplom an der Fachhochschule Potsdam.
+            Steinmetz/ Bildhauerin (Gesellin) an der Meisterschule für Handwerker Kaiserslautern.
+            Einzugsgebiet Rheinland-Pfalz
+            Mitglied im Verband der Restauratoren (VDR).
+            Eingetragen in der Restauratorenliste des Landes Sachsen-Anhalt.
+          </v-responsive>
 
-          <v-avatar class="elevation-12 mb-12" size="128">
-            <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+          <v-avatar class="elevation-12 mb-12" size="256">
+            <v-img :src="require('~/assets/images/antje.jpg')"></v-img>
           </v-avatar>
 
-          <div></div>
+          <!-- <div></div> -->
 
-          <v-btn color="grey" href="https://vuetifyjs.com" outlined large>
+          <!-- <v-btn color="grey" href="https://vuetifyjs.com" outlined large>
             <span class="grey--text text--darken-1 font-weight-bold">Vuetify Documentation</span>
-          </v-btn>
+          </v-btn>-->
         </v-container>
 
         <div class="py-12"></div>
@@ -160,15 +175,14 @@
         <div class="py-12"></div>
       </section>
 
-      <v-sheet id="contact" color="#333333" dark tag="section" tile>
+      <v-sheet id="contact" color="#333333" dark tag="section">
         <div class="py-12"></div>
 
         <v-container>
-          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Contact Me</h2>
+          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Kontakt</h2>
 
           <v-responsive class="mx-auto mb-12" width="56">
             <v-divider class="mb-1"></v-divider>
-
             <v-divider></v-divider>
           </v-responsive>
 
@@ -191,7 +205,7 @@
               </v-col>
 
               <v-col class="mx-auto" cols="auto">
-                <v-btn color="accent" x-large>Submit</v-btn>
+                <v-btn color="accent" x-large>Senden</v-btn>
               </v-col>
             </v-row>
           </v-theme-provider>
@@ -201,11 +215,12 @@
       </v-sheet>
     </v-content>
 
-    <v-footer class="justify-center" color="#292929" height="100">
+    <!-- <v-footer class="justify-center" color="#292929" height="100">
       <div
         class="title font-weight-light grey--text text--lighten-1 text-center"
       >&copy; {{ (new Date()).getFullYear() }} — Vuetify, LLC — Made with 💜 by John Leider</div>
-    </v-footer>
+    </v-footer>-->
+
     <!-- <logo /> -->
     <!-- <h1 class="title">Nuxt.js & Netlify CMS Starter</h1>
     <h2 class="subtitle">Truly fantastic. Sometimes I astound even myself.</h2>
@@ -224,7 +239,7 @@
         <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
       </a>
     </div>-->
-  </v-app>
+  </span>
 </template>
 
 <script>
