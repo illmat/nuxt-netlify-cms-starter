@@ -8,7 +8,7 @@ export const mutations = {
     state.blogPosts = list
   },
   setPages(state, pages) {
-    state.pages = pages;
+    state.pages = pages
   }
 }
 
@@ -29,7 +29,12 @@ export const actions = {
     let pageFiles = await require.context('~/assets/content/pages/', false, /\.json$/)
     console.log('index::pageFiles: pageFiles:', pageFiles);
     let pages = pageFiles.keys().map(key => {
-      return key;
+      console.log('index::paktest: key:', key);
+      let res = pageFiles(key);
+      console.log('index::paktest: res:', res);
+      res.page = key.replace('./', '').replace('.json', '');
+      return res;
     })
+    await commit('setPages', pages)
   }
 }

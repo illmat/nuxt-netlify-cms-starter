@@ -58,7 +58,7 @@
         <div class="py-12"></div>
 
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">Profil</h2>
+          <h2 class="display-2 font-weight-bold mb-3">{{pages.aboutme.title}}</h2>
 
           <v-responsive class="mx-auto mb-8" width="56">
             <v-divider class="mb-1"></v-divider>
@@ -67,14 +67,7 @@
           </v-responsive>
 
           <v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
-            In meine Fachrichtung fällt die Bearbeitung von:
-            <br />Naturstein, Ziegel/ Keramik, Betonwerkstein/ Terrazzo, Mosaik, Gips…
-            Seit 2013 bin ich freiberuflich selbstständig tätig im Bereich der Steinkonservierung. Ich arbeite auch als freie Mitarbeiterin in verschiedenen Restaurierungsfirmen.
-            Diplom an der Fachhochschule Potsdam.
-            Steinmetz/ Bildhauerin (Gesellin) an der Meisterschule für Handwerker Kaiserslautern.
-            Einzugsgebiet Rheinland-Pfalz
-            Mitglied im Verband der Restauratoren (VDR).
-            Eingetragen in der Restauratorenliste des Landes Sachsen-Anhalt.
+            <div v-html="$md.render(pages.aboutme.intro)" />
           </v-responsive>
 
           <v-avatar class="elevation-12 mb-12" size="256">
@@ -251,6 +244,28 @@ export default {
   components: {
     // Logo
   },
+  computed: {
+    // aboutme() {
+    //   return pageByName('aboutme')
+    // },
+    // start() {
+    //   return pageByName('start')
+    // },
+    pages() {
+      const temp = {}
+      this.$store.state.pages.forEach(d => {
+        temp[d.page] = d
+      })
+      console.log('index::pages: temp:', temp)
+      console.log('index::pages: temp.aboutme.title:', temp.aboutme.title)
+      return temp
+    }
+  },
+  // methods: {
+  //   pageByName(name) {
+  //     return this.$store.state.pages.find(d => d.page === name)
+  //   }
+  // },
   data() {
     return {
       articles: [
