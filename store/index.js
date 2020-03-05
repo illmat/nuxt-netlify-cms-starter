@@ -1,10 +1,14 @@
 export const state = () => ({
-  blogPosts: []
+  blogPosts: [],
+  pages: [],
 })
 
 export const mutations = {
   setBlogPosts(state, list) {
     state.blogPosts = list
+  },
+  setPages(state, pages) {
+    state.pages = pages;
   }
 }
 
@@ -21,5 +25,11 @@ export const actions = {
       return res
     })
     await commit('setBlogPosts', blogPosts)
+
+    let pageFiles = await require.context('~/assets/content/pages/', false, /\.json$/)
+    console.log('index::pageFiles: pageFiles:', pageFiles);
+    let pages = pageFiles.keys().map(key => {
+      return key;
+    })
   }
 }
