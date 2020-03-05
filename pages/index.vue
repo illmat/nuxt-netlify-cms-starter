@@ -68,7 +68,7 @@
 
           <v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
             In meine Fachrichtung fällt die Bearbeitung von:
-            Naturstein, Ziegel/ Keramik, Betonwerkstein/ Terrazzo, Mosaik, Gips…
+            <br />Naturstein, Ziegel/ Keramik, Betonwerkstein/ Terrazzo, Mosaik, Gips…
             Seit 2013 bin ich freiberuflich selbstständig tätig im Bereich der Steinkonservierung. Ich arbeite auch als freie Mitarbeiterin in verschiedenen Restaurierungsfirmen.
             Diplom an der Fachhochschule Potsdam.
             Steinmetz/ Bildhauerin (Gesellin) an der Meisterschule für Handwerker Kaiserslautern.
