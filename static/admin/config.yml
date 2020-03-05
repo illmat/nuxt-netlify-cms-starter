@@ -28,7 +28,7 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
-          - {label: Bild, name: image, widget: string}
+          - {label: Bild, name: image, widget: image}
       - label: "Start"
         name: "locations"
         file: "assets/content/pages/start.json"
