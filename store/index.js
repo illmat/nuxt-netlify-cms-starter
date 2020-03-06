@@ -42,16 +42,16 @@ export const actions = {
     await commit('setPages', pages)
 
 
-    // portfolioItems
-    let portfolioItems = await require.context('~/assets/content/portfolio/', false, /\.json$/)
-    // console.log('index::portfolioItems: portfolioItems:', portfolioItems);
-    let items = portfolioItems.keys().map(key => {
-      console.log('index::paktest: key:', key);
-      let res = portfolioItems(key);
-      console.log('index::paktest: res:', res);
-      res.page = key.replace('./', '').replace('.json', '');
-      return res;
-    })
-    await commit('setPortfolioItems', items)
+    // // portfolioItems
+    // let portfolioItems = await require.context('~/assets/content/portfolio/', false, /\.json$/)
+    // // console.log('index::portfolioItems: portfolioItems:', portfolioItems);
+    // let items = portfolioItems.keys().map(key => {
+    //   console.log('index::paktest: key:', key);
+    //   let res = portfolioItems(key);
+    //   console.log('index::paktest: res:', res);
+    //   res.page = key.replace('./', '').replace('.json', '');
+    //   return res;
+    // })
+    // await commit('setPortfolioItems', items)
   }
 }
