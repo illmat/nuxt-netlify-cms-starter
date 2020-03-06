@@ -14,7 +14,7 @@
       <v-btn @click="$vuetify.goTo('#hero')" text>Start</v-btn>
       <v-btn @click="$vuetify.goTo('#about-me')" text>Profil</v-btn>
       <v-btn @click="$vuetify.goTo('#features')" text>Features</v-btn>
-      <v-btn @click="$vuetify.goTo('#stats')" text>Stats</v-btn>
+      <!-- <v-btn @click="$vuetify.goTo('#stats')" text>Stats</v-btn> -->
       <v-btn @click="$vuetify.goTo('#blog')" text>Blog</v-btn>
       <v-btn @click="$vuetify.goTo('#contact')" text>Kontakt</v-btn>
       <v-spacer></v-spacer>
@@ -34,14 +34,14 @@
                     <span
                       class="font-weight-light"
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
-                    >Diplom Restauratorin Ante Theobalt</span>
+                    >{{pages.start.title}}</span>
 
                     <br />
 
                     <span
-                      :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                      :class="[$vuetify.breakpoint.smAndDown ? 'display-1': 'display-4']"
                       class="font-weight-black"
-                    >Steinkonservierung</span>
+                    >{{pages.start.subTitle}}</span>
                   </v-col>
 
                   <v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
@@ -68,6 +68,7 @@
 
           <v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
             <div v-html="$md.render(pages.aboutme.intro)" />
+            <p>{{pages.aboutme.image}}</p>
           </v-responsive>
 
           <v-avatar class="elevation-12 mb-12" size="256">
@@ -121,7 +122,7 @@
         <div class="py-12"></div>
       </section>
 
-      <section id="stats">
+      <!-- <section id="stats">
         <v-parallax
           :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
           src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
@@ -138,7 +139,7 @@
             </v-row>
           </v-container>
         </v-parallax>
-      </section>
+      </section>-->
 
       <section id="blog">
         <div class="py-12"></div>
