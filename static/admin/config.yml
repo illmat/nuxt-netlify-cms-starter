@@ -47,3 +47,4 @@ collections:
         fields:
           - {label: Titel, name: title, widget: string}
           - {label: Untertitel, name: subTitle, widget: string}
+          - {label: Bild, name: image, widget: image}

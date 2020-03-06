@@ -25,7 +25,7 @@
           <v-img
             max-height="1000"
             :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-            :src="require('~/assets/images/header_50.jpg')"
+            :src="pages.start.image"
           >
             <v-theme-provider dark>
               <v-container fill-height>
@@ -72,7 +72,7 @@
           </v-responsive>
 
           <v-avatar class="elevation-12 mb-12" size="256">
-            <v-img :src="require('~/assets/images/antje.jpg')"></v-img>
+            <v-img :src="pages.aboutme.image"></v-img>
           </v-avatar>
 
           <!-- <div></div> -->
@@ -154,8 +154,13 @@
           </v-responsive>
 
           <v-row>
-            <v-col v-for="({ title, description }, i) in portfolioItems" :key="i" cols="12" md="4">
-              <!-- <v-img :src="src" class="mb-4" height="275" max-width="100%"></v-img> -->
+            <v-col
+              v-for="({ title, description, image }, i) in portfolioItems"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <v-img :src="image" class="mb-4" height="275" max-width="100%"></v-img>
 
               <h3 class="font-weight-black mb-4 text-uppercase" v-text="title"></h3>
 
@@ -246,7 +251,11 @@ export default {
   },
   computed: {
     portfolioItems() {
-      return this.$store.state.pages.portfolioItems
+      console.log(
+        'index::paktest: this.$store.state.pages.portfolioItems:',
+        this.$store.state.portfolioItems
+      )
+      return this.$store.state.portfolioItems
     },
     pages() {
       const temp = {}
