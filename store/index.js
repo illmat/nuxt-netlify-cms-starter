@@ -1,6 +1,7 @@
 export const state = () => ({
   blogPosts: [],
   pages: [],
+  portfolioItems: [],
 })
 
 export const mutations = {
@@ -9,11 +10,15 @@ export const mutations = {
   },
   setPages(state, pages) {
     state.pages = pages
-  }
+  },
+  setPortfolioItems(state, items) {
+    state.portfolioItems = items
+  },
 }
 
 export const actions = {
   async nuxtServerInit({ commit }) {
+    // blog
     let files = await require.context(
       '~/assets/content/blog/',
       false,
@@ -26,15 +31,27 @@ export const actions = {
     })
     await commit('setBlogPosts', blogPosts)
 
+
+    // pages
     let pageFiles = await require.context('~/assets/content/pages/', false, /\.json$/)
-    console.log('index::pageFiles: pageFiles:', pageFiles);
     let pages = pageFiles.keys().map(key => {
-      console.log('index::paktest: key:', key);
       let res = pageFiles(key);
-      console.log('index::paktest: res:', res);
       res.page = key.replace('./', '').replace('.json', '');
       return res;
     })
     await commit('setPages', pages)
+
+
+    // portfolioItems
+    let portfolioItems = await require.context('~/assets/content/portfolio/', false, /\.json$/)
+    console.log('index::portfolioItems: portfolioItems:', portfolioItems);
+    let items = portfolioItems.keys().map(key => {
+      console.log('index::paktest: key:', key);
+      let res = portfolioItems(key);
+      console.log('index::paktest: res:', res);
+      res.page = key.replace('./', '').replace('.json', '');
+      return res;
+    })
+    await commit('setPortfolioItems', items)
   }
 }

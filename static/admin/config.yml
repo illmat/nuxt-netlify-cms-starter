@@ -24,11 +24,13 @@ collections:
     folder: 'assets/content/portfolio'
     create: true
     format: json
+    slug: '{{slug}}'
     editor:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: Bild, name: image, widget: image}
   - label: "Pages"
     name: "pages"
     files:
