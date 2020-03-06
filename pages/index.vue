@@ -178,7 +178,8 @@
             <v-divider></v-divider>
           </v-responsive>
 
-          <form netlify name="contact" method="POST">
+          <form method="post" data-netlify="true" data-netlify-honeypot="bot-field" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
             <v-theme-provider light>
               <v-row>
                 <v-col cols="12">
