@@ -246,7 +246,6 @@ export default {
   },
   computed: {
     portfolioItems() {
-      console.log('index::portfolioItems: this:', this)
       return this.$store.state.pages.portfolioItems
     },
     pages() {
@@ -254,8 +253,6 @@ export default {
       this.$store.state.pages.forEach(d => {
         temp[d.page] = d
       })
-      console.log('index::pages: temp:', temp)
-      console.log('index::pages: temp.aboutme.title:', temp.aboutme.title)
       return temp
     }
   },
