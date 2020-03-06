@@ -44,7 +44,7 @@ export const actions = {
 
     // portfolioItems
     let portfolioItems = await require.context('~/assets/content/portfolio/', false, /\.json$/)
-    console.log('index::portfolioItems: portfolioItems:', portfolioItems);
+    // console.log('index::portfolioItems: portfolioItems:', portfolioItems);
     let items = portfolioItems.keys().map(key => {
       console.log('index::paktest: key:', key);
       let res = portfolioItems(key);
