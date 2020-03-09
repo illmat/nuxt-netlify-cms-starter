@@ -1,20 +1,10 @@
 <template>
   <span>
     <v-app-bar app height="60" elevate-on-scroll>
-      <!-- <v-avatar class="mr-3" color="grey lighten-5" size="70">
-        <v-img
-          contain
-          max-height="70%"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-        ></v-img>
-      </v-avatar>-->
-
       <v-toolbar-title class="font-weight-black headline"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn @click="$vuetify.goTo('#hero')" text>Start</v-btn>
       <v-btn @click="$vuetify.goTo('#about-me')" text>Profil</v-btn>
-      <!-- <v-btn @click="$vuetify.goTo('#features')" text>Features</v-btn> -->
-      <!-- <v-btn @click="$vuetify.goTo('#stats')" text>Stats</v-btn> -->
       <v-btn @click="$vuetify.goTo('#portfolio')" text>Portfolio</v-btn>
       <v-btn @click="$vuetify.goTo('#contact')" text>Kontakt</v-btn>
       <v-spacer></v-spacer>
@@ -84,63 +74,6 @@
 
         <div class="py-12"></div>
       </section>
-      <!--
-      <section id="features" class="grey lighten-3">
-        <div class="py-12"></div>
-
-        <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">VUETIFY FEATURES</h2>
-
-          <v-responsive class="mx-auto mb-12" width="56">
-            <v-divider class="mb-1"></v-divider>
-
-            <v-divider></v-divider>
-          </v-responsive>
-
-          <v-row>
-            <v-col v-for="({ icon, title, text }, i) in features" :key="i" cols="12" md="4">
-              <v-card class="py-12 px-4" color="grey lighten-5" flat>
-                <v-theme-provider dark>
-                  <div>
-                    <v-avatar color="primary" size="88">
-                      <v-icon large v-text="icon"></v-icon>
-                    </v-avatar>
-                  </div>
-                </v-theme-provider>
-
-                <v-card-title
-                  class="justify-center font-weight-black text-uppercase"
-                  v-text="title"
-                ></v-card-title>
-
-                <v-card-text class="subtitle-1" v-text="text"></v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-
-        <div class="py-12"></div>
-      </section>-->
-
-      <!-- <section id="stats">
-        <v-parallax
-          :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-          src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-        >
-          <v-container fill-height>
-            <v-row class="mx-auto">
-              <v-col v-for="[value, title] of stats" :key="title" cols="12" md="3">
-                <div class="text-center">
-                  <div class="display-3 font-weight-black mb-4" v-text="value"></div>
-
-                  <div class="title font-weight-regular text-uppercase" v-text="title"></div>
-                </div>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-parallax>
-      </section>-->
-
       <section id="portfolio">
         <div class="py-12"></div>
 
@@ -155,16 +88,31 @@
 
           <v-row>
             <v-col
-              v-for="({ title, description, image }, i) in portfolioItems"
+              v-for="({ title, description, image, page }, i) in portfolioItems"
               :key="i"
               cols="12"
               md="4"
+              lg="3"
             >
-              <v-img :src="image" class="mb-4" height="275" max-width="100%"></v-img>
+              <v-dialog v-model="dialogs[i]" max-width="800px">
+                <v-card>
+                  <v-img contain :src="image" max-height="600px"></v-img>
+                  <v-card-title class="headline">{{title}}</v-card-title>
 
-              <h3 class="font-weight-black mb-4 text-uppercase" v-text="title"></h3>
+                  <v-card-text>{{description}}</v-card-text>
 
-              <div class="title font-weight-light mb-5" v-text="description"></div>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn text @click="dialogs[i] = false">Schließen</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+
+              <v-card class="fill-height" hover outlined @click="dialogs[i] = true">
+                <v-img height="220px" :src="image"></v-img>
+                <v-card-title>{{title}}</v-card-title>
+                <v-card-text>{{description}}</v-card-text>
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
@@ -214,31 +162,6 @@
         <div class="py-12"></div>
       </v-sheet>
     </v-content>
-
-    <!-- <v-footer class="justify-center" color="#292929" height="100">
-      <div
-        class="title font-weight-light grey--text text--lighten-1 text-center"
-      >&copy; {{ (new Date()).getFullYear() }} — Vuetify, LLC — Made with 💜 by John Leider</div>
-    </v-footer>-->
-
-    <!-- <logo /> -->
-    <!-- <h1 class="title">Nuxt.js & Netlify CMS Starter</h1>
-    <h2 class="subtitle">Truly fantastic. Sometimes I astound even myself.</h2>
-    <a href="https://github.com/xdesro/nuxt-netlify-cms-starter">GitHub</a>
-    <a href="http://i.ncredibly.online">Twitter</a>
-    <nuxt-link to="/blog">Blog</nuxt-link>
-    <v-btn color="primary" icon>
-      <v-icon>mdi-one-up</v-icon>
-    </v-btn>
-    <v-btn color="primary" text outlined @click="expand = !expand">Mehr</v-btn>-->
-
-    <!-- <div class="deploy-button">
-      <a
-        href="https://app.netlify.com/start/deploy?repository=https://github.com/xdesro/nuxt-netlify-cms-starter"
-      >
-        <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
-      </a>
-    </div>-->
   </span>
 </template>
 
@@ -266,33 +189,12 @@ export default {
     }
   },
   data() {
+    const dialogs = {}
+    for (let i = 0; i < this.$store.state.portfolioItems.length; i++) {
+      dialogs[i] = false
+    }
     return {
-      // features: [
-      //   {
-      //     icon: 'mdi-account-group-outline',
-      //     title: 'Vibrant Community',
-      //     text:
-      //       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam'
-      //   },
-      //   {
-      //     icon: 'mdi-update',
-      //     title: 'Frequent Updates',
-      //     text:
-      //       'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.'
-      //   },
-      //   {
-      //     icon: 'mdi-shield-outline',
-      //     title: 'Long-term Support',
-      //     text:
-      //       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam'
-      //   }
-      // ],
-      stats: [
-        ['24k', 'Github Stars'],
-        ['330+', 'Releases'],
-        ['1m', 'Downloads/mo'],
-        ['5m', 'Total Downloads']
-      ]
+      dialogs
     }
   },
   head() {
@@ -306,37 +208,4 @@ export default {
 </script>
 
 <style>
-/* .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: bold;
-  font-size: 3.2rem;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 2rem;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-a {
-  font-weight: bold;
-  color: #526488;
-}
-.deploy-button {
-  margin-top: 1rem;
-} */
 </style>
