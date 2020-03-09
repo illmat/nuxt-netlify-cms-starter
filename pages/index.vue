@@ -58,18 +58,11 @@
 
           <v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
             <div v-html="$md.render(pages.aboutme.intro)" />
-            <p>{{pages.aboutme.image}}</p>
           </v-responsive>
 
           <v-avatar class="elevation-12 mb-12" size="256">
             <v-img :src="pages.aboutme.image"></v-img>
           </v-avatar>
-
-          <!-- <div></div> -->
-
-          <!-- <v-btn color="grey" href="https://vuetifyjs.com" outlined large>
-            <span class="grey--text text--darken-1 font-weight-bold">Vuetify Documentation</span>
-          </v-btn>-->
         </v-container>
 
         <div class="py-12"></div>
@@ -166,12 +159,7 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    // Logo
-  },
   computed: {
     portfolioItems() {
       console.log(
