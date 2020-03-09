@@ -145,7 +145,7 @@
                 </v-col>
 
                 <v-col class="mx-auto" cols="auto">
-                  <v-btn type="submit" color="accent" x-large>Senden</v-btn>
+                  <v-btn type="submit" color="primary" x-large>Senden</v-btn>
                 </v-col>
               </v-row>
             </v-theme-provider>
@@ -162,10 +162,6 @@
 export default {
   computed: {
     portfolioItems() {
-      console.log(
-        'index::paktest: this.$store.state.pages.portfolioItems:',
-        this.$store.state.portfolioItems
-      )
       return this.$store.state.portfolioItems
     },
     pages() {

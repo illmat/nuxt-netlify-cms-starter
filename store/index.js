@@ -17,7 +17,9 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }) {
+  async nuxtServerInit({
+    commit
+  }) {
     // blog
     let files = await require.context(
       '~/assets/content/blog/',
@@ -44,11 +46,8 @@ export const actions = {
 
     // portfolioItems
     let portfolioItems = await require.context('~/assets/content/portfolio/', false, /\.json$/)
-    // console.log('index::portfolioItems: portfolioItems:', portfolioItems);
     let items = portfolioItems.keys().map(key => {
-      console.log('index::paktest: key:', key);
       let res = portfolioItems(key);
-      console.log('index::paktest: res:', res);
       res.page = key.replace('./', '').replace('.json', '');
       return res;
     })
