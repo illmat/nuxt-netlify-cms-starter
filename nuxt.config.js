@@ -69,7 +69,7 @@ export default {
     }
     // icons: false,
   },
-  modules: ['@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/markdownit', 'nuxt-purgecss'],
   markdownit: {
     injected: true
   },
