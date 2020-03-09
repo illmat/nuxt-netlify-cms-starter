@@ -3,10 +3,10 @@
     <v-app-bar app height="60" elevate-on-scroll>
       <v-toolbar-title class="font-weight-black headline"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn @click="$vuetify.goTo('#hero')" text>Start</v-btn>
-      <v-btn @click="$vuetify.goTo('#about-me')" text>Profil</v-btn>
-      <v-btn @click="$vuetify.goTo('#portfolio')" text>Portfolio</v-btn>
-      <v-btn @click="$vuetify.goTo('#contact')" text>Kontakt</v-btn>
+      <v-btn @click="$vuetify.goTo('#hero')" aria-label="Start" text>Start</v-btn>
+      <v-btn @click="$vuetify.goTo('#about-me')" aria-label="Profil" text>Profil</v-btn>
+      <v-btn @click="$vuetify.goTo('#portfolio')" aria-label="Portfolio" text>Portfolio</v-btn>
+      <v-btn @click="$vuetify.goTo('#contact')" aria-label="Kontakt" text>Kontakt</v-btn>
       <v-spacer></v-spacer>
     </v-app-bar>
     <v-content>
@@ -34,7 +34,13 @@
                     >{{pages.start.subTitle}}</span>
                   </v-col>
 
-                  <v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
+                  <v-btn
+                    class="align-self-end"
+                    fab
+                    outlined
+                    aria-label="Profil"
+                    @click="$vuetify.goTo('#about-me')"
+                  >
                     <v-icon>{{mdiChevronDoubleDown}}</v-icon>
                   </v-btn>
                 </v-row>

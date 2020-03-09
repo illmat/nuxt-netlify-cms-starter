@@ -5,6 +5,9 @@ export default {
    */
   head: {
     title: 'Antje Theobalt - Diplom Restauratorin - Steinkonservierung',
+    htmlAttrs: {
+      lang: 'de',
+    },
     meta: [{
         charset: 'utf-8'
       },
