@@ -24,7 +24,6 @@
     "@nuxtjs/vuetify": "^1.11.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "nuxt-purgecss": "^0.2.1",
     "prettier": "^1.19.1"
   }
 }

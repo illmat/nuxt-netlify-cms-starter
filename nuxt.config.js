@@ -69,7 +69,7 @@ export default {
     }
     // icons: false,
   },
-  modules: ['@nuxtjs/markdownit', 'nuxt-purgecss'],
+  modules: ['@nuxtjs/markdownit'],
   markdownit: {
     injected: true
   },
@@ -80,7 +80,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extractCSS: true,
+    // extractCSS: true,
     extend(config, ctx) {}
   }
 }
