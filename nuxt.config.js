@@ -58,13 +58,14 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  // vuetify: {
-  //   /* module options */
-  //   font: {
-  //     family: 'Roboto'
-  //   },
-  //   icons: 'mdi'
-  // },
+  vuetify: {
+    /* module options */
+    defaultAssets: {
+      icons: false,
+      // font: true
+    }
+    // icons: false,
+  },
   modules: ['@nuxtjs/markdownit'],
   markdownit: {
     injected: true

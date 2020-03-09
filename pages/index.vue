@@ -35,7 +35,7 @@
                   </v-col>
 
                   <v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
-                    <v-icon>mdi-chevron-double-down</v-icon>
+                    <v-icon>{{mdiChevronDoubleDown}}</v-icon>
                   </v-btn>
                 </v-row>
               </v-container>
@@ -159,6 +159,8 @@
 </template>
 
 <script>
+import { mdiChevronDoubleDown } from '@mdi/js'
+
 export default {
   computed: {
     portfolioItems() {
@@ -178,6 +180,7 @@ export default {
       dialogs[i] = false
     }
     return {
+      mdiChevronDoubleDown,
       dialogs
     }
   },
