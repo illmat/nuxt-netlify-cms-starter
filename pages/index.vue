@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <v-app>
     <v-app-bar app height="60" elevate-on-scroll>
       <v-toolbar-title class="font-weight-black headline"></v-toolbar-title>
       <v-spacer></v-spacer>
@@ -155,7 +155,7 @@
         <div class="py-12"></div>
       </v-sheet>
     </v-content>
-  </span>
+  </v-app>
 </template>
 
 <script>
