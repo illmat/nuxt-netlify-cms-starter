@@ -102,6 +102,8 @@
 
                   <v-card-actions>
                     <v-spacer></v-spacer>
+                    <v-btn text @click="next(i, -1)">prev</v-btn>
+                    <v-btn text @click="next(i, +1)">next</v-btn>
                     <v-btn text @click="dialogs[i] = false">Schließen</v-btn>
                   </v-card-actions>
                 </v-card>
@@ -178,6 +180,14 @@ export default {
         temp[d.page] = d
       })
       return temp
+    }
+  },
+  methods: {
+    next(index, add) {
+      this.dialogs[index] = false
+      const next = (index + add) % this.portfolioItems.length
+      this.dialogs[next] = true
+      console.log('index::next: next:', next)
     }
   },
   data() {
