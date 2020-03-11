@@ -67,7 +67,7 @@
           </v-responsive>
 
           <v-avatar class="elevation-12 mb-12" size="256">
-            <v-img :src="pages.aboutme.image"></v-img>
+            <v-img eager :src="pages.aboutme.image"></v-img>
           </v-avatar>
         </v-container>
 
@@ -95,7 +95,7 @@
             >
               <v-dialog v-model="dialogs[i]" max-width="800px">
                 <v-card>
-                  <v-img contain :src="image" max-height="600px"></v-img>
+                  <v-img eager contain :src="image" max-height="600px"></v-img>
                   <v-card-title class="headline">{{title}}</v-card-title>
 
                   <v-card-text>{{description}}</v-card-text>
@@ -110,7 +110,7 @@
               </v-dialog>
 
               <v-card class="fill-height" hover outlined @click="dialogs[i] = true">
-                <v-img height="220px" :src="image"></v-img>
+                <v-img eager height="220px" :src="image"></v-img>
                 <v-card-title>{{title}}</v-card-title>
                 <v-card-text>{{description}}</v-card-text>
               </v-card>
